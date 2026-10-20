@@ -19,6 +19,12 @@
       ],
       "pinDigests": true,
       "automerge": false
+    },
+    {
+      "matchPackageNames": [
+        "*"
+      ],
+      "automerge": false
     }
   ]
 }
