@@ -14,7 +14,9 @@ $receipt = [ordered]@{
     nativeWrites = $false
 }
 try {
-    $releases = Invoke-RestMethod -Uri 'https://api.github.com/repos/PowerShell/PowerShell/releases?per_page=100' -TimeoutSec 30
+    $headers = @{ Accept = 'application/vnd.github+json' }
+    if ($env:GH_TOKEN) { $headers.Authorization = "Bearer $env:GH_TOKEN" }
+    $releases = Invoke-RestMethod -Headers $headers -Uri 'https://api.github.com/repos/PowerShell/PowerShell/releases?per_page=100' -TimeoutSec 30
     $release = $releases | Where-Object { $_.prerelease -and -not $_.draft -and $_.tag_name -match '^v\d+\.\d+\.\d+-preview\.\d+$' } |
         Sort-Object { [System.Management.Automation.SemanticVersion]$_.tag_name.Substring(1) } -Descending | Select-Object -First 1
     if ($null -eq $release) { throw 'No official PowerShell preview was discovered.' }

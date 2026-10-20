@@ -19,6 +19,8 @@ jobs:
           persist-credentials: false
       - name: Resolve and verify official preview runtime
         id: runtime
+        env:
+          GH_TOKEN: ${{ github.token }}
         shell: pwsh
         run: ./scripts/Resolve-PowerShellPreview.ps1 -OutputDirectory .local/powershell-preview
       - name: Run existing source and quality gates on preview
