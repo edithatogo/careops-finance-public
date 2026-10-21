@@ -117,9 +117,9 @@ jobs:
           PY
 
   security:
-    uses: edithatogo/careops/.github/workflows/reusable-source-security.yml@6319d0c0c76ee672223c156abce9d4181c41aa9a
+    uses: edithatogo/careops/.github/workflows/reusable-source-security.yml@d829db7aa46e3789eb1b339f1ab1ad7e5d780d49
     with:
-      policy-revision: 6319d0c0c76ee672223c156abce9d4181c41aa9a
+      policy-revision: d829db7aa46e3789eb1b339f1ab1ad7e5d780d49
 
   # Preserve existing required check identities until successful hosted qualification
   # permits a protection migration to the shared job itself.
