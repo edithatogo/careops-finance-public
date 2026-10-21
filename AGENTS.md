@@ -2,7 +2,7 @@
 
 ## Operating model
 
-- This repository is maintained by a single owner for a limited private workflow.
+- This public repository is maintained by a single owner and contains reusable source; private operational deployments retain their own owners and authority.
 - No mandatory review, CODEOWNERS, or team-approval gates are required for merge.
 - Recovery remains possible via repository owner override and branch protection exceptions.
 
@@ -33,3 +33,12 @@ owner bypass is not the suite delivery route. Renovate remains the sole updater,
 with immutable action digests and no automatic promotion. Runtime development
 candidates require source validation and exact artifact integrity evidence.
 Billing refusals are not executed test failures or successful qualification.
+
+## Portable suite delivery
+
+Read README.md and .careops/module.json for the existing source/native queue and
+shared standards. Retain exact pins, current-head CI gates and publication
+boundaries. Use only fictional inputs in portable source; private bindings,
+records and native exports remain outside Git. Preserve existing component IDs
+and publisher/logical names. Source packaging never establishes native operation.
+Evaluate the shared preferred structured-document route before a new generator.
