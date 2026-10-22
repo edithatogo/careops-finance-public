@@ -5,7 +5,7 @@
 - [x] Run repository validation and inspect ignored files.
 - [ ] Prepare VMO business acceptance evidence scaffold, including sample checks, PBIR/TMDL structural checks, and SQL-dependent open checks. In progress.
 - [ ] Prepare Medical Staff business acceptance evidence scaffold, including sample checks, PBIR/TMDL structural checks, and SQL-dependent open checks. In progress.
-- [ ] Confirm SQL Server gateway and credential assumptions. Host/listener supplied as `VMISPLP-MDB001`; live database/schema, credential mode, and gateway binding are not yet validated.
+- [ ] Confirm SQL Server gateway and credential assumptions. Host/listener supplied as `<sql-server-host>`; live database/schema, credential mode, and gateway binding are not yet validated.
 - [x] Add post-export validation gate for live TMDL, PBIR, and Dataset source artifacts.
 - [x] Add generated PBIR structural validation against report implementation spec pages and feasible visual IDs.
 - [ ] Document and capture pbi-cli and pbi-tools PBIR/TMDL structural verification evidence for exported source. In progress.

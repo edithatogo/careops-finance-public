@@ -118,3 +118,9 @@ prerequisites separately from source CI; this profile configures no tenant.
 SharePoint structured document generation remains the preferred route for any
 selected structured report or document, subject to exact entitlement, complete
 output, human-edit preservation and recovery qualification.
+
+
+Public deployment examples use placeholders for all environment bindings,
+including the SQL host/listener. Keep actual values in the existing private
+operator profile; the public sample does not qualify target access or refresh.
+This does not enable deployment or replace source/native ownership.

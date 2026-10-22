@@ -4,12 +4,12 @@ Use exported Access extracts for the interim no-SQL-host build. Use SQL Server s
 
 ## Acceptance Mode
 
-Until the SQL database/schema and gateway binding are known, validation is limited to `AccessSampleAccepted`. This mode accepts the local sample result checks, documented DAX tie-outs, report page inventory, and source-control package integrity. It explicitly does not accept `SqlRefreshAccepted` or publish readiness. SQL host/listener is supplied as `VMISPLP-MDB001`.
+Until the SQL database/schema and gateway binding are known, validation is limited to `AccessSampleAccepted`. This mode accepts the local sample result checks, documented DAX tie-outs, report page inventory, and source-control package integrity. It explicitly does not accept `SqlRefreshAccepted` or publish readiness. SQL host/listener is supplied as `<sql-server-host>`.
 
 | Mode | Can be completed now | Required evidence | Cannot close in this mode |
 | --- | --- | --- | --- |
 | `AccessSampleAccepted` | Yes | Access sample row counts, DAX tie-outs, PBIR/TMDL source-control structure checks, documented exceptions. | SQL host, SQL object metadata, gateway, credentials, published refresh. |
-| `SqlRefreshAccepted` | No | SQL snapshots, SQL metadata checks, gateway binding, refresh success. | Blocked until SQL database/schema and gateway are known for `VMISPLP-MDB001`. |
+| `SqlRefreshAccepted` | No | SQL snapshots, SQL metadata checks, gateway binding, refresh success. | Blocked until SQL database/schema and gateway are known for `<sql-server-host>`. |
 
 | Check | Source | Expected result |
 | --- | --- | --- |

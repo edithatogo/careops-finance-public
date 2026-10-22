@@ -27,5 +27,5 @@ Define the SQL Server source layer that will replace Access files for published 
 - Each dashboard has a table/column mapping from Access-derived source to SQL Server view/table.
 - Shared model docs describe SQL Server-backed shared dimensions.
 - Open source gaps are explicit and assigned for resolution.
-- Access-exposed DSNs are recorded as discovery evidence only; SQL Server host/listener is supplied as `VMISPLP-MDB001`, while database/schema, reachable endpoint, credential mode, and gateway binding must be confirmed separately.
+- Access-exposed DSNs are recorded as discovery evidence only; SQL Server host/listener is supplied as `<sql-server-host>`, while database/schema, reachable endpoint, credential mode, and gateway binding must be confirmed separately.
 - No server names, database names, credentials, or secrets are committed.

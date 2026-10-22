@@ -44,6 +44,6 @@ The DAX/model implementation package is source-controlled, and the current live 
 - `src/powerbi/dashboards/vmo-finance/model-tmdl/measure-catalogue.md` is the VMO Finance measure catalogue.
 - `src/powerbi/dashboards/medical-staff/model-tmdl/measure-catalogue.md` is the Medical Staff measure catalogue.
 
-Live TMDL exports now exist for the standalone dashboard models. SQL host/listener is supplied as `VMISPLP-MDB001`; live database/schema and gateway validation remain open.
+Live TMDL exports now exist for the standalone dashboard models. SQL host/listener is supplied as `<sql-server-host>`; live database/schema and gateway validation remain open.
 
 Current merge posture: do not create shared model TMDL yet. The next evidence step is SQL validation plus TMDL/PBIR comparison under the merge-readiness gate sequence.

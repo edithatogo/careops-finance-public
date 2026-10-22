@@ -10,7 +10,7 @@ The Access databases stay as profiling inputs only. Published Power BI refresh s
 - `SqlDatabaseName`
 - default SQL schema: `dbo`
 
-Current operator-supplied `SqlServerName`: `VMISPLP-MDB001`.
+Supply `SqlServerName` through the private operator profile; public examples use `<sql-server-host>`.
 
 Keep this as a Power BI parameter/deployment value rather than hard-coding it
 inside M queries. The database name, schema confirmation, gateway binding, and
@@ -22,7 +22,7 @@ The source starter lives in [`src/powerbi/shared/m/SqlServerSourceTemplate.m`](.
 
 - An on-premises data gateway can reach the SQL Server host used for published refresh.
 - Authentication, gateway registration, and refresh credentials are managed outside this repository.
-- Database names, usernames, passwords, and secrets stay out of source control. The operator-supplied non-secret SQL host/listener is recorded as `VMISPLP-MDB001` for handoff.
+- Database names, usernames, passwords, and secrets stay out of source control. The operator-supplied SQL host/listener stays in the private deployment profile; public handoff uses `<sql-server-host>`.
 - The published model can read the agreed `dbo` objects without depending on Access files.
 
 ## Source Host Discovery Evidence
@@ -37,7 +37,7 @@ The evidence file is written to ignored `data/profile/odbc-dsn-source-contract.e
 
 - `CA` resolves to a found ODBC DSN with a SQL Server host/listener and the expected `WORKFORCE` default database, if configured.
 - `Magiq` resolves to a found ODBC DSN with a SQL Server host/listener and the expected `MAGIQ_PRD` default database for Medical Staff source objects, if configured.
-- DSN host/listener evidence should agree with the operator-supplied host `VMISPLP-MDB001`, or any difference must be recorded as an environment-specific alias/listener decision.
+- DSN host/listener evidence should agree with the operator-supplied host `<sql-server-host>`, or any difference must be recorded as an environment-specific alias/listener decision.
 - The VMO GL object `dbo.FMIS_GL_JOURNAL_2026` has its database resolved from the `Magiq` DSN or a later live SQL check, because Access did not expose that database in its linked-table connection string.
 - The evidence remains redacted: operator identity fields and sensitive DSN registry keys are stored as `<redacted>`.
 

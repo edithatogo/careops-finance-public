@@ -14,9 +14,13 @@ The readiness bar is simple:
 4. Keep deployment profiles disabled until publish approval is explicit.
 5. Keep dry-run deployment as the first and only deployment-adjacent step, and only after workspace and authentication details are confirmed.
 
-## Private GitHub Setup
+## Historical private GitHub handoff
 
-Use a dedicated remote for the private repo so local history can be pushed without changing the upstream working copy. The expected private GitHub repository is:
+This section records the original private implementation handoff. The current
+public repository contains reusable source only; do not push private history or
+operational bindings into it. Use a dedicated private remote only for an
+independently authorized private deployment, without changing this public clone.
+The historical private GitHub example is:
 
 | Setting | Expected value |
 | --- | --- |
@@ -82,7 +86,7 @@ The publish-refresh gate requires these environment variables. Store secret valu
 
 | Variable | Secret? | Purpose |
 | --- | --- | --- |
-| `PBI_SQL_SERVER_HOST` | No, but environment-specific | SQL Server host/listener behind the Access DSN handoff. Current supplied value: `VMISPLP-MDB001`. |
+| `PBI_SQL_SERVER_HOST` | No, but environment-specific | SQL Server host/listener behind the Access DSN handoff. Supply the actual value through the private deployment profile. |
 | `PBI_SQL_DATABASE` | No, but environment-specific | Published-refresh database name. |
 | `PBI_GATEWAY_ID` | No, but environment-specific | Power BI gateway identifier for SQL Server refresh. |
 | `PBI_TENANT_ID` | No, but tenant-specific | Microsoft Entra tenant used for Power BI authentication. |
@@ -125,7 +129,7 @@ The compile output belongs under an ignored validation/artifacts folder, not und
 When those details are available in the operator environment, use the publish-refresh gate:
 
 ```powershell
-$env:PBI_SQL_SERVER_HOST = "VMISPLP-MDB001"
+$env:PBI_SQL_SERVER_HOST = "<sql-server-host>"
 $env:PBI_SQL_DATABASE = "<database-name>"
 $env:PBI_GATEWAY_ID = "<gateway-id>"
 $env:PBI_TENANT_ID = "<tenant-id>"
@@ -145,3 +149,13 @@ Do not commit those values. The current committed source can be source-control r
 - Deployment placeholders remain disabled until the real environment details are available.
 - Live deployment stays off until the approval path is documented and confirmed.
 - Do not run Desktop reload, import, or write commands as part of validation; this ALM pass verifies exported source only.
+
+
+## Public source and private bindings
+
+All tracked guides, plans and environment samples use `<sql-server-host>` rather
+than the operator's actual host/listener. Keep real SQL, database, schema, gateway,
+workspace and account bindings in an existing private deployment profile. A
+placeholder is not discovery evidence or a usable publish-refresh value. This
+source cleanup changes no deployed binding and enables no refresh/deployment.
+Earlier Git revisions remain historical; this is not a history-erasure claim.
