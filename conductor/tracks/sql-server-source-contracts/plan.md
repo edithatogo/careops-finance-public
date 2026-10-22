@@ -12,4 +12,4 @@
 - [x] Document DSN-to-server/database/schema/object mapping rules.
 - [x] Add local DSN source-contract validation: `powershell -NoProfile -ExecutionPolicy Bypass -File .\tests\dsn\Test-OdbcDsnSourceContract.ps1`.
 - [x] Add optional redacted DSN evidence export for source-machine operators: `powershell -NoProfile -ExecutionPolicy Bypass -File .\tests\dsn\Test-OdbcDsnSourceContract.ps1 -WriteEvidence`.
-- [ ] Run live SQL Server confirmation and validation. Host/listener is supplied as `VMISPLP-MDB001`; database/schema, reachable endpoint, credential mode, and gateway binding are not yet confirmed.
+- [ ] Run live SQL Server confirmation and validation. Host/listener is supplied as `<sql-server-host>`; database/schema, reachable endpoint, credential mode, and gateway binding are not yet confirmed.

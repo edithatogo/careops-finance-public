@@ -19,7 +19,7 @@ The dashboard should stay isolated under `src/powerbi/dashboards/medical-staff/`
 
 Use the Access-backed templates to validate the current sample build and business logic. These checks prove row counts, grains, relationships, measures, and report structure against `data/raw/Medical_Staff_Reporting.accdb`; they do not prove that the later SQL Server objects exist or refresh successfully.
 
-Use the SQL Server templates as the forward contract for published refresh. Bind `SqlServerName` to the supplied host/listener `VMISPLP-MDB001` through Power BI parameters or deployment configuration, and keep database/schema/gateway values external until confirmed:
+Use the SQL Server templates as the forward contract for published refresh. Bind `SqlServerName` to the supplied host/listener `<sql-server-host>` through Power BI parameters or deployment configuration, and keep database/schema/gateway values external until confirmed:
 
 | Placeholder | Purpose | Interim value |
 | --- | --- | --- |

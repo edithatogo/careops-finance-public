@@ -22,7 +22,7 @@ Complete the standalone VMO Finance Power BI dashboard as a working report backe
 
 ## Current Handoff Artifacts
 
-Live Desktop sample build/refresh, TMDL export, and PBIR report export now exist. The remaining live-build handoff is SQL Server database/schema and gateway validation against host/listener `VMISPLP-MDB001`. The main thread should use:
+Live Desktop sample build/refresh, TMDL export, and PBIR report export now exist. The remaining live-build handoff is SQL Server database/schema and gateway validation against host/listener `<sql-server-host>`. The main thread should use:
 
 - `conductor/tracks/vmo-dashboard-completion/acceptance-pack.md` for the
   concrete no-SQL-host acceptance checks, DAX verification list,
@@ -44,4 +44,4 @@ Live Desktop sample build/refresh, TMDL export, and PBIR report export now exist
 - Validation notes list source totals checked and unresolved exceptions.
 - The no-SQL-host acceptance pack is complete enough to run against Access
   sample exports without editing generated PBIR/TMDL or M templates.
-- Live SQL Server validation records host/listener `VMISPLP-MDB001`, the confirmed database/schema, credential mode, and gateway binding before publish readiness.
+- Live SQL Server validation records host/listener `<sql-server-host>`, the confirmed database/schema, credential mode, and gateway binding before publish readiness.

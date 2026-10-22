@@ -1,6 +1,6 @@
 # Plan
 
-- [ ] Confirm VMO SQL Server contract is ready against `VMISPLP-MDB001` and the live database/schema. Database/schema remains open.
+- [ ] Confirm VMO SQL Server contract is ready against `<sql-server-host>` and the live database/schema. Database/schema remains open.
 - [x] Update VMO Power Query source templates for SQL Server parameters.
 - [x] Draft VMO semantic model relationship and date-handling checklist.
 - [x] Draft VMO DAX measure catalogue.

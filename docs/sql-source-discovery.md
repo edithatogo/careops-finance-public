@@ -73,7 +73,7 @@ The broader metadata pass also found linked file dependencies that are not SQL S
 - VMO `dbo_FMIS_GL_JOURNAL` points at `dbo.FMIS_GL_JOURNAL_2026`; the database is not exposed in its Access connect string and must be resolved from the `Magiq` DSN or SQL Server access.
 - `ca_MVRPT_COSTCENTRES` is shared between VMO and Medical Staff through the `WORKFORCE` database.
 - Medical Staff FTE/reporting dimensions are already exposed as `ca` views/materialized views in `WORKFORCE`; published SQL contracts should preserve those object names or map them explicitly to curated views.
-- Operator-supplied SQL Server host/listener: `VMISPLP-MDB001`. Keep `SqlServerName` parameterised in Power BI and bind it to this value through deployment/operator configuration; database, schema, gateway, and credential details still need live validation.
+- Operator-supplied SQL Server host/listener: `<sql-server-host>`. Keep `SqlServerName` parameterised in Power BI and bind it to this value through deployment/operator configuration; database, schema, gateway, and credential details still need live validation.
 
 ## DSN Handoff Script
 
@@ -121,7 +121,7 @@ It does not attempt a SQL Server connection, does not test credentials, and does
 
 ## Local Next Steps With SQL Host Supplied
 
-The operator has supplied the SQL Server host/listener `VMISPLP-MDB001`. These are the remaining concrete steps that can be completed from the repo while database, schema, gateway, and credential binding remain unconfirmed:
+The operator has supplied the SQL Server host/listener `<sql-server-host>`. These are the remaining concrete steps that can be completed from the repo while database, schema, gateway, and credential binding remain unconfirmed:
 
 1. Re-run `./scripts/Invoke-Validation.ps1 -Mode RepositoryHygiene -SkipPowerBiCli` and `./scripts/Invoke-Validation.ps1 -Mode SourceControlReady -SkipPowerBiCli` after any export refresh, and record the result in the acceptance notes.
 2. Confirm the private GitHub remote settings and keep the first push out of this handoff pass.

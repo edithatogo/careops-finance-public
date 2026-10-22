@@ -11,7 +11,7 @@ which validates the report against the local Access sample templates under
   without changing the dashboard table contract.
 
 Use the agreed SQL Server parameters. These are Power BI query parameters that
-must be created or bound in Desktop/pbi-cli using `VMISPLP-MDB001` for `SqlServerName` once the database/schema and credentials are available; they
+must be created or bound in Desktop/pbi-cli using `<sql-server-host>` for `SqlServerName` once the database/schema and credentials are available; they
 are not local placeholder strings inside each table query:
 
 - `SqlServerName`

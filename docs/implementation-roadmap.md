@@ -10,7 +10,7 @@ Deliver finance reporting as a system: one governed semantic layer where definit
 2. Keep VMO Finance and Medical Staff as separate reports, backed by tiny embedded sample partitions for local inspection.
 3. Use limited sample extracts from Access only to identify the minimum table and column subset required.
 4. Define the SQL Server tables or views that will replace Access for published refresh.
-5. Use SQL Server host/listener `VMISPLP-MDB001`; capture the database/schema and gateway binding behind the DSNs, then validate published refresh against that contract.
+5. Use SQL Server host/listener `<sql-server-host>`; capture the database/schema and gateway binding behind the DSNs, then validate published refresh against that contract.
 6. Inventory the wider analytics share at `//example.invalid/analytics` in place, without bulk-copying dashboards locally. Current status from this workstation/session: access is denied.
 7. Catalogue each discovered dashboard by path, type, source dependencies, subject area, audience, refresh pattern, and candidate shared model entities.
 8. Map Service Agreement, Funding and Performance Supplement, KPI supplement, and budget allocation measures into a performance-target metadata layer.
