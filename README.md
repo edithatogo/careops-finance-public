@@ -124,3 +124,15 @@ Public deployment examples use placeholders for all environment bindings,
 including the SQL host/listener. Keep actual values in the existing private
 operator profile; the public sample does not qualify target access or refresh.
 This does not enable deployment or replace source/native ownership.
+
+## Power BI PPU qualification — 22 October 2026
+
+For the existing PBIP/TMDL/PBIR reporting work, qualify XMLA schema/model comparison, partition refresh and staged Power BI deployment only against an existing authorised workspace. Keep SQL/gateway/connection parameters private; PPU does not repair source connectivity, grant finance-record access or qualify a published report.
+
+Follow the [shared PPU capability and permissions boundary](https://github.com/edithatogo/careops/blob/main/docs/development-and-delivery.md#power-bi-premium-per-user-current-qualification-boundary). The deployment operator's current PPU assignment is verified, but workspace mode, role/Build rights,
+tenant settings, reader licensing and actual feature operation still require
+exact-target evidence. XMLA and Power BI pipelines are qualification candidates;
+Fabric Git/Copilot capacity and Power Automate/Word entitlement remain separate.
+Do not infer support for report Export-to-file REST on PPU alone. Preserve current
+source, native identities and recovery; no automatic workspace conversion,
+settings change, new reporting dependency or cutover follows.
