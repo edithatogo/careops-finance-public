@@ -39,3 +39,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\Get-AccessInventor
   and `pbi-tools` for build and validation work before falling back to Power BI
   Desktop UI.
 - Use deployment dry-runs before any Power BI Service promotion.
+
+## Targeted test cadence
+
+Follow AGENTS.md targeted-test guidance during edits. Preserve full integration,
+coverage and release gates at coherent milestones. Cached or zero-test results
+are not complete acceptance evidence.
