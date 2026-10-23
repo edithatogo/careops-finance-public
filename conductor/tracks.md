@@ -144,3 +144,6 @@ sensitive files into the repository.
 5. Run publish-readiness and deployment dry run.
 6. Decide whether shared-model consolidation adds value.
 7. Promote only immutable, reviewed artifacts with rollback and support evidence.
+
+- [~] **Track: Python 3.15 migration and qualification**
+  *Link: [./tracks/python315_qualification_20261023/index.md](./tracks/python315_qualification_20261023/index.md)*
