@@ -24,3 +24,7 @@
 - Source code, scripts, documentation, Conductor context, and Power BI source artifacts are committed.
 - Raw Access files, extracts, profiles, credentials, logs, and generated binaries are excluded from git.
 - Environment-specific paths should be parameters, not hard-coded into model source.
+
+Project-owned code uses Apache-2.0 under the user-selected portfolio standard.
+Preserve third-party terms, attribution, historical evidence and private-source
+rights; qualify source/package changes without changing native authority.

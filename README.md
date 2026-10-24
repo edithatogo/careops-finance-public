@@ -84,7 +84,7 @@ outside source control.
 
 ## Licence
 
-Original material in this repository is licensed under the MIT License.
+Original material in this repository is licensed under Apache-2.0.
 Third-party components retain their own terms.
 
 ## Qualified source-package candidates
@@ -150,3 +150,5 @@ and invoke `.venv-finance-ci/bin/python` (`Scripts/python.exe` on Windows)
 explicitly. Helpers use only the standard library. Retain the existing package,
 SPDX inventory and attestation gates; source qualification does not establish
 report refresh, finance-data access or native deployment.
+
+Retain [LICENSE](LICENSE) and [NOTICE](NOTICE) with project-owned source distributions.
