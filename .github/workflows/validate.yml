@@ -15,6 +15,9 @@ concurrency:
 permissions:
   contents: read
 
+env:
+  FINANCE_HELPER_PYTHON: '3.15.1'
+
 jobs:
   validate:
     name: validate (${{ matrix.mode }})
@@ -67,6 +70,39 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 1
+      - name: Refuse an existing helper environment
+        shell: pwsh
+        run: |
+          $financeEnvironment = Join-Path $env:GITHUB_WORKSPACE '.venv-finance-ci'
+          try { $financeExisting = Get-Item -LiteralPath $financeEnvironment -Force -ErrorAction Stop }
+          catch [System.Management.Automation.ItemNotFoundException] { $financeExisting = $null }
+          if ($null -ne $financeExisting) { throw 'Refusing a pre-existing helper environment.' }
+          exit 0
+      - name: Activate the qualified repository-local helper environment
+        id: helper_runtime
+        uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+        with:
+          version: '0.13.5'
+          python-version: ${{ env.FINANCE_HELPER_PYTHON }}
+          activate-environment: true
+          venv-path: .venv-finance-ci
+          no-project: true
+          enable-cache: false
+      - name: Verify the actual helper runtime and prefix
+        id: verify_helper
+        shell: bash
+        env:
+          EXPECTED_PYTHON: ${{ env.FINANCE_HELPER_PYTHON }}
+          QUALIFIED_VENV: ${{ steps.helper_runtime.outputs.venv }}
+        run: |
+          python -I - <<'PYCODE'
+          import os, pathlib, platform, sys
+          expected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / '.venv-finance-ci'
+          selected = pathlib.Path(os.environ['QUALIFIED_VENV'])
+          if platform.python_version() != os.environ['EXPECTED_PYTHON'] or selected.resolve() != expected.resolve() or pathlib.Path(sys.prefix).resolve() != expected.resolve() or sys.prefix == sys.base_prefix:
+              raise SystemExit('Expected the qualified repository-local helper interpreter.')
+          print('Verified repository-local Python', platform.python_version())
+          PYCODE
       - name: Generate drift-aware coverage artifact
         shell: bash
         run: |
@@ -87,7 +123,7 @@ jobs:
           fail_ci_if_error: false
           verbose: true
       - name: Probe Codecov status endpoint
-        if: always()
+        if: always() && steps.verify_helper.outcome == 'success'
         shell: bash
         run: |
           set -euo pipefail

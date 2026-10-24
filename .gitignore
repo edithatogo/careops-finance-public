@@ -26,3 +26,7 @@ coverage/
 
 # Isolated CI candidates and private validation evidence
 .local/
+
+.venv-finance-ci/
+__pycache__/
+*.py[cod]
