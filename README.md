@@ -136,3 +136,17 @@ Fabric Git/Copilot capacity and Power Automate/Word entitlement remain separate.
 Do not infer support for report Export-to-file REST on PPU alone. Preserve current
 source, native identities and recovery; no automatic workspace conversion,
 settings change, new reporting dependency or cutover follows.
+
+## Python helper isolation
+
+The source-package, main attestation and coverage endpoint helpers activate
+Python 3.15.1 in `.venv-finance-ci` through immutable setup-uv. Each job refuses
+an existing environment and verifies the actual patch and repository-local prefix
+before running helpers. The endpoint probe cannot fall back to ambient Python if
+activation fails. PowerShell remains the source-validation and quality runner.
+
+For local helper checks, use `uv venv --python 3.15.1 --no-project .venv-finance-ci`
+and invoke `.venv-finance-ci/bin/python` (`Scripts/python.exe` on Windows)
+explicitly. Helpers use only the standard library. Retain the existing package,
+SPDX inventory and attestation gates; source qualification does not establish
+report refresh, finance-data access or native deployment.

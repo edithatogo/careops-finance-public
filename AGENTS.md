@@ -43,12 +43,14 @@ records and native exports remain outside Git. Preserve existing component IDs
 and publisher/logical names. Source packaging never establishes native operation.
 Evaluate the shared preferred structured-document route before a new generator.
 
-## Required Python execution
+## Python execution
 
-Every active Python helper, build, test and CI job uses Python3.15 at the newest
-qualified patch, currently3.15.1. Select the interpreter explicitly and align pins,
-locks and instructions. Older runtime evidence remains historical, not a default.
-Do not replace a running environment or change native bindings for an upgrade.
+Prefer the latest suitable qualified Python, currently repo-local 3.15.1, for
+helpers, tests and CI. Verify the actual interpreter and prefix; retain exact
+source/tool pins and existing security/functionality gates. The user's 24 October
+clarification permits a necessary compatible/provider version without additional
+permission when its concrete reason, scope and actual execution are recorded.
+Do not replace a working environment underneath an active operation.
 
 ## Targeted test execution
 
