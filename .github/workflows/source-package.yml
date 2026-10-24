@@ -59,7 +59,7 @@ jobs:
         run: |
           git diff --exit-code
           mkdir -p dist
-          git archive --format=zip --output=dist/careops-finance-source.zip "$SOURCE_COMMIT" README.md LICENSE src/powerbi config scripts docs
+          git archive --format=zip --output=dist/careops-finance-source.zip "$SOURCE_COMMIT" README.md LICENSE NOTICE src/powerbi config scripts docs
       - name: Read qualified immutable artifact tooling
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
