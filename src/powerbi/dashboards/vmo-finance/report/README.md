@@ -9,6 +9,10 @@ Current status:
   and validate it before treating it as the report source of truth.
 - `report-implementation-spec.md` defines pages, visuals, fields, filters, and
   validation interactions.
+- [`docs/synthetic-vmo-period-slice.md`](../../../../../docs/synthetic-vmo-period-slice.md)
+  describes a separate fictional source-to-measure reconciliation slice. It
+  does not add a period field to the production VMO source contract or claim
+  Power BI rendering.
 - `Build-VmoReportPbir.ps1` provides a CLI/PBIR build path once a compatible
   semantic model or dataset reference exists.
 - Keep generated PBIR artifacts under `report/pbir/` and validate them with

@@ -304,6 +304,10 @@ try {
         $tmdlContractTest = Join-Path $repoRoot "tests/tmdl/Test-LiveExportTmdl.ps1"
         Assert-Condition (Test-Path -LiteralPath $tmdlContractTest) "Missing live TMDL export contract test: tests/tmdl/Test-LiveExportTmdl.ps1"
         & $tmdlContractTest
+
+        $syntheticFinanceSliceTest = Join-Path $repoRoot "tests/finance/Test-SyntheticVmoPeriodSlice.ps1"
+        Assert-Condition (Test-Path -LiteralPath $syntheticFinanceSliceTest) "Missing synthetic finance period slice test: tests/finance/Test-SyntheticVmoPeriodSlice.ps1"
+        & $syntheticFinanceSliceTest
     }
 
     Test-RequiredFile -RelativePath "docs/dashboard-acceptance.md" -Message "Missing required readiness document: docs/dashboard-acceptance.md"
