@@ -21,7 +21,7 @@ VMO Finance and Medical Staff dashboards. It does not mutate Power BI Desktop.
 `pbi` is available locally at:
 
 ```text
-C:\Users\60217257\.local\bin\pbi.exe
+${PRIVATE_HOME}\.local\bin\pbi.exe
 ```
 
 Primary command sequence:
